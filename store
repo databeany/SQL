@@ -1,0 +1,32 @@
+--create a simple store database
+
+CREATE TABLE store
+(id INTEGER PRIMARY KEY, 
+name TEXT, 
+color TEXT, 
+size TEXT,
+cost INTEGER);
+
+INSERT INTO store VALUES 
+(1, "SHIRT", "RED", "SMALL", 5),
+(2, "SHIRT", "ORANGE", "SMALL", 5),
+(3, "SHIRT", "YELLOW", "SMALL", 5),
+(4, "SHIRT", "RED", "MEDIUM", 5),
+(5, "SHIRT", "ORANGE", "MEDIUM", 5),
+(6, "SHIRT", "YELLOW", "MEDIUM", 5),
+(7, "SHIRT", "RED", "LARGE", 5),
+(8, "SHIRT", "ORANGE", "LARGE", 5),
+(9, "SHIRT", "YELLOW", "LARGE", 5),
+(10, "SHIRT", "RED", "XLARGE", 7),
+(11, "SHIRT", "ORANGE", "XLARGE", 7),
+(12, "SHIRT", "YELLOW", "XLARGE", 7),
+(13, "SHIRT", "RED", "XXLARGE", 7),
+(14, "SHIRT", "ORANGE", "XXLARGE", 7);
+
+SELECT * FROM store;
+
+--disply all of the times in the store by the color red and order them ascending by cost
+SELECT * FROM store WHERE color = "RED" ORDER BY COST ASC; 
+
+--display the max price for an item in the store
+SELECT MAX(cost) FROM store;
