@@ -1,0 +1,50 @@
+/* Create table about the stars and thier hobbies */
+
+CREATE TABLE stars (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    fullname TEXT,
+    age INTEGER,
+    movie TEXT,
+    spouse_id INTEGER);
+
+INSERT INTO stars (fullname, age, movie, spouse_id) VALUES ("Bradley Cooper", 55, "Hangover", 2);
+INSERT INTO stars (fullname, age, movie, spouse_id) VALUES ("Jennifer Esposito", 40, "Other Guys", 1);
+INSERT INTO stars (fullname, age, movie, spouse_id) VALUES ("Blake Lively", 22, "Dust", 4);
+INSERT INTO stars (fullname, age, movie, spouse_id) VALUES ("Ryan Reynolds", 33, "Adam Project", 3);
+INSERT INTO stars (fullname, age, movie, spouse_id) VALUES ("Priyanka Chopra", 55, "Dust", 6);
+INSERT INTO stars (fullname, age, movie, spouse_id) VALUES ("Nick Jonas", 55, "Hangover", 5);
+INSERT INTO stars (fullname, age, movie, spouse_id) VALUES ("Katherine Schwarzenegger", 55, "Suspect", 8);
+INSERT INTO stars (fullname, age, movie, spouse_id) VALUES ("Chris Pratt", 55, "Jurasic Park", 7);
+INSERT INTO stars (fullname, age, movie, spouse_id) VALUES ("Camila Alves", 55, "X Men", 10);
+INSERT INTO stars (fullname, age, movie, spouse_id) VALUES ("Matthew McConaughey", 55, "Fender", 9);
+INSERT INTO stars (fullname, age, movie, spouse_id) VALUES ("Matt Booer", 55, "TV Only", 11);
+INSERT INTO stars (fullname, age, movie, spouse_id) VALUES ("Simon Halls", 55, "Night Moves", 12);
+INSERT INTO stars (fullname, age, movie, spouse_id) VALUES ("Bruce Willis", 55, "Die Hard", 14);
+INSERT INTO stars (fullname, age, movie, spouse_id) VALUES ("Demi Moore", 55, "Strip Tease", 13);
+INSERT INTO stars (fullname, age, movie, spouse_id) VALUES ("Burt Reynolds", 85, "Strip Tease", Null );
+
+CREATE table hobbies (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    stars_id INTEGER,
+    name TEXT);
+    
+INSERT INTO hobbies (stars_id, name) VALUES (1, "drawing");
+INSERT INTO hobbies (stars_id, name) VALUES (2, "painting");
+INSERT INTO hobbies (stars_id, name) VALUES (3, "dancing");
+INSERT INTO hobbies (stars_id, name) VALUES (4, "dancing");
+INSERT INTO hobbies (stars_id, name) VALUES (5, "fencing");
+INSERT INTO hobbies (stars_id, name) VALUES (6, "fishing");
+INSERT INTO hobbies (stars_id, name) VALUES (7, "boating");
+INSERT INTO hobbies (stars_id, name) VALUES (8, "camping");
+INSERT INTO hobbies (stars_id, name) VALUES (9, "skating");
+INSERT INTO hobbies (stars_id, name) VALUES (10, "diving");
+INSERT INTO hobbies (stars_id, name) VALUES (11, "reading");
+INSERT INTO hobbies (stars_id, name) VALUES (12, "swimming");
+INSERT INTO hobbies (stars_id, name) VALUES (13, "gardening");
+INSERT INTO hobbies (stars_id, name) VALUES (14, "cooking");
+INSERT INTO hobbies (stars_id, name) VALUES (15, "driving");
+
+SELECT stars.fullname, hobbies.name
+FROM stars
+JOIN hobbies
+WHERE stars.id=hobbies.stars_id;
